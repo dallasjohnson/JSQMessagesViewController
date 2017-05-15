@@ -1,12 +1,17 @@
+install! 'cocoapods',
+        :share_schemes_for_development_pods => true
+
+
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
+use_frameworks!
 
 # ignore all warnings from all pods
 inhibit_all_warnings!
 
-pod 'JSQSystemSoundPlayer', '~> 2.0'
+pod 'JSQMessagesViewController'
 
-target :JSQMessagesTests, :exclusive => true do
-   pod 'JSQSystemSoundPlayer', '~> 2.0'
+target :JSQMessagesTests do
+   pod 'JSQMessagesViewController'
 end
